@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'ui/screens/home.dart';
+
 void main() => runApp(App());
 
 class App extends StatelessWidget {
@@ -10,11 +12,8 @@ class App extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Scaffold(
-        body: Center(
-          child: Text("Hello!"),
-        ),
-      )
+      debugShowCheckedModeBanner: false,
+      home: HomeScreen(),
     );
   }
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:badges/badges.dart';
 
 import 'package:flutter_has_power/models.dart';
+import '../shared/restaurant_item.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -43,50 +44,10 @@ class _HomeScreenState extends State<HomeScreen> {
       body: ListView(
         padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
         children: restaurants.map((restaurant) {
-          var isFavorite = favorites.contains(restaurant);
-
-          return Padding(
-            padding: const EdgeInsets.only(bottom: 12),
-            child: Stack(
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(8),
-                  child: Image.network(
-                    restaurant.image,
-                    height: 170,
-                    fit: BoxFit.cover,
-                    width: double.infinity,
-                  ),
-                ),
-                Positioned(
-                  bottom: 10,
-                  left: 10,
-                  child: Text(
-                    restaurant.name,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      backgroundColor: Colors.black,
-                      color: Colors.white,
-                      fontSize: 18,
-                    ),
-                  ),
-                ),
-                Positioned(
-                  top: 5,
-                  right: 5,
-                  child: FloatingActionButton(
-                    mini: true,
-                    backgroundColor: Colors.black38,
-                    onPressed: () => toggleFavorite(restaurant),
-                    child: Icon(
-                      isFavorite ? Icons.favorite : Icons.favorite_border,
-                      color: isFavorite ? Colors.red : Colors.white,
-                      size: 20,
-                    ),
-                  ),
-                ),
-              ],
-            ),
+          return RestaurantItem(
+            restaurant: restaurant,
+            isFavorite: favorites.contains(restaurant),
+            onPressed: (r) { toggleFavorite(r); },
           );
         }).toList(),
       ),

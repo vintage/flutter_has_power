@@ -30,5 +30,67 @@
       "image":
       "https://www.budgetdirect.com.au/blog/wp-content/uploads/2013/10/How-To-BBQ-Hero-951x512.jpg"
     }
+  ],
+  "dishes": [
+    {
+      "id": 1,
+      "name": "Cheeseburger",
+      "image": "https://i2-prod.mirror.co.uk/incoming/article11259440.ece/ALTERNATES/s615b/PROD-Cheeseburger-On-Wooden-Table-ed.jpg",
+      "price": 15
+    },
+    {
+      "id": 2,
+      "name": "Spaghetti",
+      "image": "https://www.recipetineats.com/wp-content/uploads/2016/08/Spaghetti-Bolognese_4-1.jpg",
+      "price": 8
+    },
+    {
+      "id": 3,
+      "name": "Potato chips",
+      "image": "https://cdn3.tmbi.com/toh/GoogleImages/Homemade-Potato-Chips_EXPS_WRSM17_39614_C03_22_1b.jpg",
+      "price": 12
+    },
+    {
+      "id": 4,
+      "name": "Tacos",
+      "image": "https://d1doqjmisr497k.cloudfront.net/-/media/mccormick-us/recipes/mccormick/f/800/fiesta_tacos_800x800.jpg",
+      "price": 10
+    },
+    {
+      "id": 5,
+      "name": "Grilled sausage",
+      "image": "https://assets.epicurious.com/photos/57aa13ac3cbb3a89338d89bd/master/pass/pierogies.jpg",
+      "price": 6
+    },
+    {
+      "id": 6,
+      "name": "French fries",
+      "image": "https://cms.splendidtable.org/sites/default/files/styles/w2000/public/french-fries.jpg",
+      "price": 6
+    },
+    {
+      "id": 7,
+      "name": "Hawaiian Pizza",
+      "image": "https://d2gk7xgygi98cy.cloudfront.net/1374-3-large.jpg",
+      "price": 0
+    },
+    {
+      "id": 8,
+      "name": "Fluffy pancakes",
+      "image": "https://www.eggs.ca/assets/RecipePhotos/Fluffy-Pancakes-New-CMS.jpg",
+      "price": 17
+    },
+    {
+      "id": 9,
+      "name": "Fried Chicken",
+      "image": "https://thestayathomechef.com/wp-content/uploads/2018/06/Baked-BBQ-Chicken-1-small-1.jpg",
+      "price": 20
+    },
+    {
+      "id": 10,
+      "name": "Vege Salad",
+      "image": "https://www.tasteofhome.com/wp-content/uploads/2017/10/exps6498_MRR133247D07_30_5b_WEB-2.jpg",
+      "price": 5
+    }
   ]
 }

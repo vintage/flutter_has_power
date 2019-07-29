@@ -23,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: Header(context),
+      appBar: Header(),
       body: FutureBuilder<List<Restaurant>>(
         future: restaurantsLoader,
         builder: (context, snapshot) {

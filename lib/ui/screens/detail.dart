@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import 'package:flutter_has_power/models.dart';
+import 'package:flutter_has_power/state.dart';
 import 'package:flutter_has_power/ui/shared/menu_item.dart';
 import 'package:flutter_has_power/ui/shared/header.dart';
 
@@ -28,7 +30,7 @@ class _DetailScreenState extends State<DetailScreen> {
     }
 
     return Scaffold(
-      appBar: Header(context, title: args.restaurant.name),
+      appBar: Header(title: args.restaurant.name),
       body: FutureBuilder<List<Menu>>(
         future: menuLoader,
         builder: (context, snapshot) {
@@ -50,6 +52,6 @@ class _DetailScreenState extends State<DetailScreen> {
   }
 
   void addToCart(Menu menu) {
-    print(menu);
+    Provider.of<CartState>(context).addItem(menu);
   }
 }

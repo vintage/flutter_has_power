@@ -7,10 +7,7 @@ class CartState extends ChangeNotifier {
 
   Map<Menu, int> get items => _items;
   void addItem(Menu item) {
-    if (!_items.containsKey(item)) {
-      _items[item] = 0;
-    }
-
+    _items.putIfAbsent(item, () => 0);
     _items[item] += 1;
     notifyListeners();
   }

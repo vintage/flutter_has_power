@@ -28,12 +28,19 @@ class MenuItem extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(12),
-            child: Image.network(
-              menu.image,
-              height: 80,
-              width: 80,
-              fit: BoxFit.cover,
-            ),
+            child: menu.image == null
+                ? Image.asset(
+                    'assets/menu_empty.jpg',
+                    height: 80,
+                    width: 80,
+                    fit: BoxFit.cover,
+                  )
+                : Image.network(
+                    menu.image,
+                    height: 80,
+                    width: 80,
+                    fit: BoxFit.cover,
+                  ),
           ),
           Expanded(
             child: Container(

@@ -10,12 +10,12 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  List<Restaurant> restaurants = [];
+  Future<List<Restaurant>> restaurantsLoader;
   List<Restaurant> favorites = [];
 
   @override
   void initState() {
-    restaurants = getRestaurants();
+    restaurantsLoader = getRestaurants();
     super.initState();
   }
 
@@ -41,16 +41,28 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      body: ListView(
-        padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
-        children: restaurants.map((restaurant) {
-          return RestaurantItem(
-            restaurant: restaurant,
-            isFavorite: favorites.contains(restaurant),
-            onPressed: (r) { toggleFavorite(r); },
-          );
-        }).toList(),
-      ),
+      body: FutureBuilder<List<Restaurant>>(
+          future: restaurantsLoader,
+          builder: (context, snapshot) {
+            if (snapshot.connectionState != ConnectionState.done) {
+              return Center(
+                child: Text("Loading ..."),
+              );
+            }
+
+            return ListView(
+              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+              children: snapshot.data.map((restaurant) {
+                return RestaurantItem(
+                  restaurant: restaurant,
+                  isFavorite: favorites.contains(restaurant),
+                  onPressed: (r) {
+                    toggleFavorite(r);
+                  },
+                );
+              }).toList(),
+            );
+          }),
     );
   }
 

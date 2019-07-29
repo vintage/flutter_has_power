@@ -29,15 +29,24 @@ class RestaurantItem extends StatelessWidget {
             ),
           ),
           Positioned(
-            bottom: 10,
-            left: 10,
-            child: Text(
-              restaurant.name,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                backgroundColor: Colors.black,
-                color: Colors.white,
-                fontSize: 18,
+            bottom: 0,
+            left: 0,
+            child: ClipRRect(
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(8),
+                topRight: Radius.circular(8),
+              ),
+              child: Container(
+                padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                color: Colors.black.withOpacity(0.7),
+                child: Text(
+                  restaurant.name,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                  ),
+                ),
               ),
             ),
           ),

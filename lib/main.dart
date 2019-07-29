@@ -9,6 +9,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter has Power',
+      debugShowCheckedModeBanner: false,
       home: HomeScreen(),
     );
   }

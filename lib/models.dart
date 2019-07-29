@@ -19,11 +19,13 @@ class Menu {
   final int id;
   final String name;
   final String image;
+  final int price;
 
   Menu({
     @required this.id,
     @required this.name,
     @required this.image,
+    @required this.price,
   });
 }
 
@@ -39,6 +41,15 @@ Future<List<Restaurant>> getRestaurants() async {
   }).toList();
 }
 
-List<Menu> getMenu(Restaurant restaurant) {
-  return [];
+Future<List<Menu>> getMenu(Restaurant restaurant) async {
+  Response<List<dynamic>> response = await Dio().get('$API_URL/menu/');
+
+  return response.data.map((data) {
+    return Menu(
+      id: data["id"],
+      name: data["name"],
+      image: data["image"],
+      price: data["price"],
+    );
+  }).toList();
 }

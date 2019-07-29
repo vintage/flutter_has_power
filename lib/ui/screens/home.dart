@@ -25,28 +25,29 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: Header(),
       body: FutureBuilder<List<Restaurant>>(
-          future: restaurantsLoader,
-          builder: (context, snapshot) {
-            if (snapshot.connectionState != ConnectionState.done) {
-              return Center(
-                child: Text("Loading ..."),
-              );
-            }
-
-            return ListView(
-              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
-              children: snapshot.data.map((restaurant) {
-                return RestaurantItem(
-                  restaurant: restaurant,
-                  isFavorite: favorites.contains(restaurant),
-                  onPressed: () => navigateDetail(restaurant),
-                  onFavorite: () {
-                    toggleFavorite(restaurant);
-                  },
-                );
-              }).toList(),
+        future: restaurantsLoader,
+        builder: (context, snapshot) {
+          if (snapshot.connectionState != ConnectionState.done) {
+            return Center(
+              child: Text("Loading ..."),
             );
-          }),
+          }
+
+          return ListView(
+            padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+            children: snapshot.data.map((restaurant) {
+              return RestaurantItem(
+                restaurant: restaurant,
+                isFavorite: favorites.contains(restaurant),
+                onPressed: () => navigateDetail(restaurant),
+                onFavorite: () {
+                  toggleFavorite(restaurant);
+                },
+              );
+            }).toList(),
+          );
+        },
+      ),
     );
   }
 

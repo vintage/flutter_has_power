@@ -28,7 +28,7 @@ class _DetailScreenState extends State<DetailScreen> {
     }
 
     return Scaffold(
-      appBar: Header(title: args.restaurant.name),
+      appBar: Header(context, title: args.restaurant.name),
       body: FutureBuilder<List<Menu>>(
         future: menuLoader,
         builder: (context, snapshot) {

@@ -5,10 +5,7 @@ import 'package:flutter_has_power/state.dart';
 import 'package:provider/provider.dart';
 
 class Header extends StatelessWidget implements PreferredSizeWidget {
-  Header({
-    Key key,
-    this.title
-  });
+  Header({Key key, this.title});
 
   final String title;
 
@@ -29,7 +26,10 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
                 badgeContent: Consumer<CartState>(
                   builder: (context, value, _) => Text(
                     value.count.toString(),
-                    style: TextStyle(color: Colors.white, fontSize: 12),
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 12,
+                    ),
                   ),
                 ),
                 child: Icon(Icons.shopping_basket),

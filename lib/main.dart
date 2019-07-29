@@ -6,10 +6,14 @@ import 'ui/screens/detail.dart';
 import 'ui/screens/cart.dart';
 import 'state.dart';
 
-void main() => runApp(ChangeNotifierProvider<CartState>.value(
-  value: CartState(),
-  child: App(),
-));
+void main() {
+  return runApp(
+    ChangeNotifierProvider<CartState>.value(
+      value: CartState(),
+      child: App(),
+    ),
+  );
+}
 
 class App extends StatelessWidget {
   @override

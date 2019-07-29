@@ -91,6 +91,12 @@
       "name": "Vege Salad",
       "image": "https://www.tasteofhome.com/wp-content/uploads/2017/10/exps6498_MRR133247D07_30_5b_WEB-2.jpg",
       "price": 5
+    },
+    {
+      "id": 10,
+      "name": "Sasquatch foot",
+      "image": null,
+      "price": 9999
     }
   ]
 }

@@ -15,12 +15,12 @@ class Restaurant {
   });
 }
 
-class Dish {
+class Menu {
   final int id;
   final String name;
   final String image;
 
-  Dish({
+  Menu({
     @required this.id,
     @required this.name,
     @required this.image,
@@ -39,6 +39,6 @@ Future<List<Restaurant>> getRestaurants() async {
   }).toList();
 }
 
-List<Dish> getDishes() {
+List<Menu> getMenu(Restaurant restaurant) {
   return [];
 }

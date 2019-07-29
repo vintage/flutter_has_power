@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:badges/badges.dart';
 
-AppBar Header() {
+AppBar Header({String title}) {
   return AppBar(
     backgroundColor: Colors.black,
-    title: Text("FOOdy"),
+    title: Text(title == null ? "FOOdy" : title),
     actions: <Widget>[
       Padding(
         padding: EdgeInsets.only(right: 16),

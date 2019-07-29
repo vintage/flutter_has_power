@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_has_power/models.dart';
-import '../shared/restaurant_item.dart';
-import '../shared/header.dart';
+import 'package:flutter_has_power/ui/screens/detail.dart';
+import 'package:flutter_has_power/ui/shared/restaurant_item.dart';
+import 'package:flutter_has_power/ui/shared/header.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -50,7 +51,10 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void navigateDetail(Restaurant restaurant) {
-    Navigator.of(context).pushNamed("/details");
+    Navigator.of(context).pushNamed(
+      "/details",
+      arguments: DetailScreenArguments(restaurant: restaurant),
+    );
   }
 
   void toggleFavorite(Restaurant restaurant) {

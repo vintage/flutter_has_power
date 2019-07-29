@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:badges/badges.dart';
 
 import 'package:flutter_has_power/models.dart';
 import '../shared/restaurant_item.dart';
+import '../shared/header.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -22,25 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        title: Text("FOOdy"),
-        actions: <Widget>[
-          Padding(
-            padding: EdgeInsets.only(right: 16),
-            child: Center(
-              child: Badge(
-                badgeColor: Colors.red,
-                badgeContent: Text(
-                  "4",
-                  style: TextStyle(color: Colors.white, fontSize: 12),
-                ),
-                child: Icon(Icons.shopping_basket),
-              ),
-            ),
-          ),
-        ],
-      ),
+      appBar: Header(),
       body: FutureBuilder<List<Restaurant>>(
           future: restaurantsLoader,
           builder: (context, snapshot) {
@@ -56,14 +38,19 @@ class _HomeScreenState extends State<HomeScreen> {
                 return RestaurantItem(
                   restaurant: restaurant,
                   isFavorite: favorites.contains(restaurant),
-                  onPressed: (r) {
-                    toggleFavorite(r);
+                  onPressed: () => navigateDetail(restaurant),
+                  onFavorite: () {
+                    toggleFavorite(restaurant);
                   },
                 );
               }).toList(),
             );
           }),
     );
+  }
+
+  void navigateDetail(Restaurant restaurant) {
+    Navigator.of(context).pushNamed("/details");
   }
 
   void toggleFavorite(Restaurant restaurant) {

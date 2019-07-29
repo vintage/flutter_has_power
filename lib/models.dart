@@ -56,7 +56,7 @@ Future<List<Menu>> getMenu(Restaurant restaurant) async {
 
   return response.data.map((data) {
     return Menu(
-      id: data["id"],
+      id: data["id"] + (restaurant.id + 100) * 13,
       name: data["name"],
       image: data["image"],
       price: data["price"],

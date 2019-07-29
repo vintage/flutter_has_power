@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_has_power/models.dart';
+import 'package:flutter_has_power/ui/shared/menu_image.dart';
 
 class MenuItem extends StatelessWidget {
   final Menu menu;
@@ -28,19 +29,7 @@ class MenuItem extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(12),
-            child: menu.image == null
-                ? Image.asset(
-                    'assets/menu_empty.jpg',
-                    height: 80,
-                    width: 80,
-                    fit: BoxFit.cover,
-                  )
-                : Image.network(
-                    menu.image,
-                    height: 80,
-                    width: 80,
-                    fit: BoxFit.cover,
-                  ),
+            child: MenuImage(menu: menu, size: 80),
           ),
           Expanded(
             child: Container(

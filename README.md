@@ -8,6 +8,7 @@ Fake food ordering mobile app built in Dart and Flutter.
 
 ![Home](/screenshots/home.png?raw=true)
 ![Detail](/screenshots/detail.png?raw=true)
+![Cart](/screenshots/cart.png?raw=true)
 
 ## Presentation
 

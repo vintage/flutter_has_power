@@ -13,6 +13,11 @@ class Restaurant {
     @required this.name,
     @required this.image,
   });
+
+  @override
+  String toString() {
+    return name;
+  }
 }
 
 class Menu {
@@ -27,6 +32,11 @@ class Menu {
     @required this.image,
     @required this.price,
   });
+
+  @override
+  String toString() {
+    return name;
+  }
 }
 
 Future<List<Restaurant>> getRestaurants() async {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_has_power/models.dart';
+import 'package:flutter_has_power/ui/shared/menu_item.dart';
 import 'package:flutter_has_power/ui/shared/header.dart';
 
 class DetailScreenArguments {
@@ -40,11 +41,15 @@ class _DetailScreenState extends State<DetailScreen> {
           return ListView(
             padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
             children: snapshot.data.map((menu) {
-              return Text(menu.name);
+              return MenuItem(menu: menu, onPressed: () => addToCart(menu));
             }).toList(),
           );
         },
       ),
     );
+  }
+
+  void addToCart(Menu menu) {
+    print(menu);
   }
 }

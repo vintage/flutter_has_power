@@ -52,6 +52,6 @@ class _DetailScreenState extends State<DetailScreen> {
   }
 
   void addToCart(Menu menu) {
-    Provider.of<CartState>(context).addItem(menu);
+    Provider.of<CartState>(context, listen: false).addItem(menu);
   }
 }

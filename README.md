@@ -2,6 +2,8 @@
 
 Reference project for **Flutter has Power** workshops organized by STX Next. 
 
+![Preview](/screenshots/preview.gif?raw=true)
+
 ## FOOdy
 
 Fake food ordering mobile app built in Dart and Flutter.

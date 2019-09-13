@@ -22,6 +22,9 @@ class App extends StatelessWidget {
       title: 'Flutter has Power',
       debugShowCheckedModeBanner: false,
       home: HomeScreen(),
+      theme: ThemeData(
+        fontFamily: 'Roboto',
+      ),
       routes: {
         '/details': (context) => DetailScreen(),
         '/cart': (context) => CartScreen(),

@@ -13,7 +13,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   provider: ^3.0.0+1
   badges: ^1.1.0
-  dio: ^2.1.13
+  http: ^0.12.0+2
   shared_preferences: ^0.5.3+4
 
 dev_dependencies:
@@ -26,3 +26,12 @@ flutter:
 
   assets:
     - assets/
+
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto-Regular.ttf
+        - asset: assets/fonts/Roboto-RegularItalic.ttf
+          style: italic
+        - asset: assets/fonts/Roboto-Bold.ttf
+          weight: 700

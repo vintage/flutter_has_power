@@ -28,7 +28,8 @@ class _HomeScreenState extends State<HomeScreen> {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     var cachedFavorites = prefs.getStringList(favoritesKey);
     if (cachedFavorites != null) {
-      favorites = cachedFavorites.map((favorite) => int.parse(favorite)).toList();
+      favorites =
+          cachedFavorites.map((favorite) => int.parse(favorite)).toList();
     }
   }
 
@@ -78,6 +79,7 @@ class _HomeScreenState extends State<HomeScreen> {
     setState(() {});
 
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setStringList(favoritesKey, favorites.map((restaurant) => restaurant.toString()).toList());
+    prefs.setStringList(favoritesKey,
+        favorites.map((restaurant) => restaurant.toString()).toList());
   }
 }

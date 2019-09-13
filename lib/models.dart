@@ -1,5 +1,7 @@
+import 'dart:convert';
+
 import 'package:flutter/widgets.dart';
-import 'package:dio/dio.dart';
+import 'package:http/http.dart' as http;
 
 const API_URL = 'https://my-json-server.typicode.com/vintage/flutter_has_power';
 
@@ -40,26 +42,28 @@ class Menu {
 }
 
 Future<List<Restaurant>> getRestaurants() async {
-  Response<List<dynamic>> response = await Dio().get('$API_URL/restaurants/');
+  var response = await http.get('$API_URL/restaurants/');
+  var data = json.decode(response.body);
 
-  return response.data.map((data) {
+  return List<Restaurant>.from(data.map((data) {
     return Restaurant(
       id: data["id"],
       name: data["name"],
       image: data["image"],
     );
-  }).toList();
+  }));
 }
 
 Future<List<Menu>> getMenu(Restaurant restaurant) async {
-  Response<List<dynamic>> response = await Dio().get('$API_URL/menu/');
+  var response = await http.get('$API_URL/menu/');
+  var data = json.decode(response.body);
 
-  return response.data.map((data) {
+  return List<Menu>.from(data.map((data) {
     return Menu(
       id: data["id"] + (restaurant.id + 100) * 13,
       name: data["name"],
       image: data["image"],
       price: data["price"],
     );
-  }).toList();
+  }));
 }

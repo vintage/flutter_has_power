@@ -29,6 +29,30 @@
       "name": "BBQ",
       "image":
       "https://www.budgetdirect.com.au/blog/wp-content/uploads/2013/10/How-To-BBQ-Hero-951x512.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Burger Stacja",
+      "image":
+      "https://media-cdn.tripadvisor.com/media/photo-s/0e/a3/63/c9/lunch.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Falla Wrap",
+      "image":
+      "http://hastalabistro.pl/wp-content/uploads/2019/04/falla_wrap.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Pizza Hut",
+      "image":
+      "https://www.onlineqatar.com/Portals/0/Images/living/Dining-Entertainments/pizza-hut-qatar.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Aioli",
+      "image":
+      "https://bi.im-g.pl/im/0f/90/14/z21563663V,Aioli-inspired-by-Gdansk-.jpg"
     }
   ],
   "menu": [
